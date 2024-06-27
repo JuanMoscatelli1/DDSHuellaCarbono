@@ -1,0 +1,153 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Mi organización </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/admin/organizacionDetalle.css"> <!-- Comparten estilos -->
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> {{organizacion.nombre}} </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Tipo </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.tipoDeOrganizacion}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Clasificación </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.subclasificacion}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Provincia </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.direccion.provincia}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Municipio </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.direccion.municipio}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Localidad </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.direccion.localidad}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Dirección </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{organizacion.direccion.direccion}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8" style="margin-top: 30px;">
+
+           <h1 class="sb_title"> Contactos </h1>
+
+            <table id="table_header_OD" class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-dark">
+                       <th scope="col"> Nombre </th>
+                       <th scope="col"> Apellido </th>
+                       <th scope="col"> Mail </th>
+                       <th scope="col"> Teléfono </th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body_OD">
+                {{#each organizacion.contactos}}
+                    <tr class="align-middle">
+                       <td> {{nombre}} </td>
+                       <td> {{apellido}} </td>
+                       <td> {{mail}} </td>
+                       <td> {{nroTelefono}} </td>
+                    </tr>
+                {{/each}}
+               </tbody>
+            </table>
+
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4" style="margin-top: 30px;">
+
+            <h1 class="sb_title"> Sectores </h1>
+
+            <table id="table_header_OD" class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> Sector </th>
+                        <th scope="col"> Cant. Miembros </th>
+                    </tr>
+                </thead>
+
+            {{#each organizacion.sectores}}
+                <tbody id="table_body_OD">
+                    <tr class="align-middle">
+                        <td> {{nombre}} </td>
+                        <td> {{cantidadDeMiembros}} </td>
+                    </tr>
+            {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+
+        </div>
+
+        <div id="caja_vacia_OD"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}
+
+

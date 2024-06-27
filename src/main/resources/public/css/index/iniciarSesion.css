@@ -1,0 +1,38 @@
+#title_IS {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+#title_IS h1 {
+    font-size: 60px;
+}
+
+#form_container_IS {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#label_form_IS {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#btn_iniciar_sesion {
+    font-size: 25px;
+    margin: 25px 25% 20px;
+    border-radius: 25px;
+    height: 50px;
+    width: 50%;
+}
+
+#extra_option_IS {
+    font-size: 15px;
+    text-align: center;
+}
+
+#caja_vacia_IS {
+    width: 80%;
+    height: 150px;
+}

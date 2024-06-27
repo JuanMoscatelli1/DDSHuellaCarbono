@@ -1,0 +1,43 @@
+{{> index/base-index.hbs}}
+
+{{#partial "titulo"}}
+    <title> Iniciar sesión </title>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div class="row">
+        <div id="title_IS" class="align-items-center">
+            <h1> Iniciar sesión </h1>
+        </div>
+    </div>
+
+    <div id="form_container_IS" class="dropdown-menu col-sm-9 col-md-7 col-lg-5 col-xl-4 align-items-center">
+
+        <form class="px-4 py-3" method="POST" action="/login">
+
+            <div class="mb-3">
+                <label id="label_form_IS" for="usuario_inicio_sesion" class="form-label"> Usuario </label>
+                <input type="text" name="nombre_de_usuario" class="form-control form-control-lg" id="usuario_inicio_sesion">
+            </div>
+
+            <div class="mb-3">
+                <label id="label_form_IS" for="contrasenia_inicio_sesion" class="form-label"> Contraseña </label>
+                <input type="password" name="contrasenia" class="form-control form-control-lg" id="contrasenia_inicio_sesion">
+            </div>
+
+            <button id="btn_iniciar_sesion" type="submit" class="btn btn-primary btn-success"> Iniciar sesión </button>
+
+        </form>
+
+        <div class="dropdown-divider"></div>
+
+        <a id="extra_option_IS" class="dropdown-item" href="/crearUsuario"> ¿Todavía no tienes una cuenta? Crea una acá </a>
+        <a id="extra_option_IS" class="dropdown-item" href="#"> ¿Olvidaste la contraseña? </a>
+
+    </div>
+
+    <div id="caja_vacia_IS"></div>
+
+{{/partial}}
+{{> base.hbs}}

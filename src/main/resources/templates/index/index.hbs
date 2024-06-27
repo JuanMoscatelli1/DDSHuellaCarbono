@@ -1,0 +1,166 @@
+{{> index/base-index.hbs}}
+
+{{#partial "titulo"}}
+    <title> Mi impacto ambiental </title>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div class="container">
+
+        <div class="row">
+            <div id="main_text" class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <h1> Conozca su impacto sobre el medioambiente </h1>
+                <p>
+                    Conocer la huella de carbono permite identificar rutas para controlar, reducir o mitigar las emisiones y
+                    impacto, y se reconoce cada vez más su alcance en el comercio de bienes y servicios.
+                </p>
+                <button type="button" id="main_button" class="btn btn-success btn-lg" onclick="location.href='crearUsuario'">
+                    Crea una cuenta GRATIS
+                </button>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <img id="main_img" src="/img/index-huellaDeCarbono.jpg" class="img-fluid">
+            </div>
+        </div>
+
+        <div id="caja_vacia"></div>
+
+        <div class="row" style="margin-bottom: 60px;">
+            <div style="font-size: 50px; text-align: center;">
+                <h1 style="font-size: 45px;">
+                    Registre sus mediciones, visualice reportes, calcule su huella de carbono en el mismo lugar
+                </h1>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 125px;">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="display: flex; padding: 0px;">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div id="funcionalidades" class="p-3 border border-3 border-success rounded-start"> Reportes </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div id="funcionalidades" class="p-3 border border-3 border-success "> Recomendaciones </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="display: flex; padding: 0px;">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div id="funcionalidades" class="p-3 border border-3 border-success"> Mediciones </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div id="funcionalidades" class="p-3 border border-3 border-success rounded-end"> Trayectos </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 60px;">
+            <div style="font-size: 50px; text-align: center;">
+                <h1 style="font-size: 35px;">
+                    La huella ecológica considera distintas subhuellas
+                </h1>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/cultivos.jpg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Cultivos </h3>
+                        <p class="card-text">
+                            Superficie en la cual se desarrollan actividades agrícolas, orientadas al suministro de productos como alimentos, fibra, aceites, entre otros
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/pastos.jpg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Pastos </h3>
+                        <p class="card-text">
+                            Área dedicada a pastos, dedicados a la producción animal y productos como carne, leche, cueros y lana
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/bosques.jpg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Bosques </h3>
+                        <p class="card-text">
+                            Superficie ocupada por los bosques, de donde, principalmente se obtienen productos derivados de la madera, empleados en la producción
+                            de bienes, o también de combustibles como leña
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 50px;">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/mar.jpg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Mar </h3>
+                        <p class="card-text">
+                            Superficie marítima biológicamente productiva
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/edificios.jpg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Superficie construida </h3>
+                        <p class="card-text">
+                            Área ocupada por edificios, embalses y otro tipo de infraestructura, que no es biológicamente productiva
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/img/energia.jpeg" class="card-img-top" width="50" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title"> Energía </h3>
+                        <p class="card-text">
+                            Área de bosque necesaria para absorber las emisiones de CO2 derivadas de la quema de combustibles fósiles
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="caja_vacia"></div>
+
+        <div class="row" style="margin-bottom: 40px;">
+            <div style="font-size: 50px; text-align: center;">
+                <h1 style="font-size: 35px;">
+                    La huella de carbono es un indicador <br> reconocido internacionalmente
+                </h1>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 100px;">
+            <div style="font-size: 20px; text-align: center;">
+                <p style="font-style: italic;">
+                    El cálculo de la HC consiste en recopilar los datos referentes a los consumos directos e
+                    <br> indirectos de insumos materiales y energía, y traducirlos en emisiones de CO2 equivalentes
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

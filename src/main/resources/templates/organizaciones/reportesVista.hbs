@@ -1,0 +1,55 @@
+{{> organizaciones/base-org.hbs}}
+{{#partial "titulo"}}
+    <title> Reporte </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/tabla.css">
+{{/partial}}
+
+{{#partial "container"}}
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> REPORTES </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <p id="description">
+                Lista de reportes registrados en su organizacion hasta la fecha
+            </p>
+        </div>
+
+        <div class="row">
+
+            <table id="table_header" class="table table-hover table-bordered">
+
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> {{columna1}} </th>
+                        <th scope="col"> {{columna2}} </th>
+
+                    </tr>
+                </thead>
+
+                <tbody id="table_body">
+
+                {{#each reporte}}
+                    <tr class="align-middle">
+                        <td> {{@key}} </td>
+                        <td> {{this}} {{unidad}} </td>
+                    </tr>
+                {{/each}}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,75 @@
+{{> admin/base-admin.hbs}}
+
+{{#partial "titulo"}}
+    <title> Factores de Emisión </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/admin/organizaciones.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> FACTORES DE EMISIÓN </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <p id="texto1_MO" style="text-align: center;">
+                LISTADO DE FACTORES DE EMISIÓN QUE SE HAN REGISTRADO HASTA LA FECHA
+            </p>
+        </div>
+
+        <div class="row">
+
+            <table id="table_header_O" class="table table-hover table-bordered">
+
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> Descripción </th>
+                        <th scope="col"> Valor </th>
+                        <th scope="col"> Unidad </th>
+                        <th scope="col"> Tipo de Consumo </th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body_O">
+                    <tr class="align-middle">
+                        <td> Energia electrica </td>
+                        <td> 0.5 </td>
+                        <td> kWh </td>
+                        <td> Electricidad </td>
+                        <td class="text-center">
+                            <a id="link_perfil_O" class="nav-link" href="#">
+                                <i class='bx bxs-edit' title="Editar"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="align-middle">
+                        <td> Gas </td>
+                        <td> 1.0 </td>
+                        <td> m3 </td>
+                        <td> Gas Natural </td>
+                        <td class="text-center">
+                            <a id="link_perfil_O" class="nav-link" href="#">
+                                <i class='bx bxs-edit' title="Editar"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="caja_vacia_O"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

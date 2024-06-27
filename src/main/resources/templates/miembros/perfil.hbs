@@ -1,0 +1,136 @@
+{{> miembros/base-miembro.hbs}}
+
+{{#partial "titulo"}}
+    <title> Mi perfil </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/admin/organizacionDetalle.css"> <!-- Comparten estilos -->
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> MI PERFIL </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Nombre </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.nombre}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Apellido </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.apellido}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Tipo Doc. </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.tipoDocumento}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Documento </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.numeroDocumento}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Provincia </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.direccion.provincia}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Municipio </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.direccion.municipio}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Localidad </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.direccion.localidad}} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="card border-success mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title"> Dirección </h3>
+                        <hr style="border: none; border-top: 3.5px solid #28A745;">
+                        <p class="card-text"> {{miembro.direccion.direccion}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+            <h1 class="sb_title"> Organizaciones </h1>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="display: flex; align-items: center; justify-content: center;">
+                <table id="table_header_OD" class="table table-hover table-bordered" style="width: 75%;">
+                    <thead>
+                        <tr class="table-dark">
+                            <th scope="col"> Nombre </th>
+                            <th scope="col"> Sector </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table_body_OD">
+                     {{#each organizaciones}}
+                        <tr class="align-middle">
+                            <td> <a href="/miembro/miOrganizacion/{{@key.id}}"> {{@key.razonSocial}} </a></td>
+                            <td> {{nombre}} </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="caja_vacia_OD"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,65 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Registrar nueva medición </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/registrarNuevaMedicion.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> REGISTRAR NUEVA MEDICIÓN </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <form method="post" action="/organizacion/subirArchivo" enctype="multipart/form-data">
+                    <div id="fila1_container">
+                        <i id="icono_subir_archivo" class='bx bxs-archive-in'></i>
+                        <h2> Suba el archivo Excel </h2>
+                    </div>
+
+                    <div id="fila2_container">
+                        <input class="form-control form-control-lg" id="subir_excel" type="file" name="uploaded_file">
+                    </div>
+
+                    <div id="fila3_container">
+
+                        <h4> ¿Desea subir el archivo guardado? </h4>
+
+                        <div id="subfila3_container">
+                            <button type="submit" class="btn btn-success btn-lg" onclick="alert('Carga de Excel enviada con exito');"> Aceptar </button>
+                            <button type="button" class="btn btn-success btn-lg" onclick="location.href='/organizacion/mediciones'">
+                                Cancelar
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div id="fila4_vacia"></div>
+
+            </div>
+
+            <div id="half_screen" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+                <img id="excel-icono" src="/img/excel-icono-ok.png" class="img-fluid">
+
+            </div>
+
+        </div>
+
+        <div id="caja_vacia_RNM"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

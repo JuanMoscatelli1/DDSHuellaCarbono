@@ -1,0 +1,83 @@
+{{> miembros/base-miembro.hbs}}
+{{#partial "tabla"}}
+
+    <div class="container">
+
+    <div class="row" style="margin-top: 50px;">
+        <h1 class="sb_title"> Trayectos </h1>
+    </div>
+
+        <br><br>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="display: flex; align-items: center; justify-content: center;">
+            <table id="table_header_OD" class="table table-hover table-bordered" style="width: 60%;">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col"> Fecha </th>
+                    <th scope="col"> Organización </th>
+                    <th scope="col"> Distancia </th>
+                    <th scope="col"> Huella de carbono </th>
+                </tr>
+                </thead>
+
+                <tbody id="table_body_OD">
+                {{#each trayectos}}
+                    <tr class="align-middle">
+                        <td> {{fecha}} </td>
+                        <td> {{organizacion.nombre}} </td>
+                        <td> {{distancia}} </td>
+                        <td> {{huellaDeCarbono}} </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 50px;">
+        <h1 class="sb_title"> Tramos </h1>
+    </div>
+
+        <br><br>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="display: flex; align-items: center; justify-content: center;">
+            <table id="table_header_OD" class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col"> Fecha </th>
+                    <th scope="col"> Organización </th>
+                    <th scope="col"> Miembros </th>
+                    <th scope="col"> Transporte </th>
+                    <th scope="col"> Origen </th>
+                    <th scope="col"> Destino </th>
+                    <th scope="col"> Distancia </th>
+                    <th scope="col"> Huella de carbono </th>
+                </tr>
+                </thead>
+
+                <tbody id="table_body_OD">
+                {{#each tramos}}
+                    <tr class="align-middle">
+                        <td> {{fecha}} </td>
+                        <td> {{organizacion.nombre}} </td>
+                        <td> {{miembros}} </td>
+                        <td> {{vehiculo}} </td>
+                        <td> {{origen}} </td>
+                        <td> {{destino}} </td>
+                        <td> {{distancia}} </td>
+                        <td> {{huellaDeCarbono}} </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <h3><br> Huella Total: {{huella}} kgCO2eq </h3>
+
+
+{{/partial}}
+{{>visualizarHuella.hbs}}

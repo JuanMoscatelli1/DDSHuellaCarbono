@@ -1,0 +1,69 @@
+{{> miembros/base-miembro.hbs}}
+
+{{#partial "titulo"}}
+    <title> Vincular organización </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/miembros/vincularOrganizacion.css">
+    <script src="/js/miembros/opcionesSelect.js"></script>
+    <script src="/js/miembros/vincularOrganizacion.js"></script>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> VINCULAR ORGANIZACIÓN </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="subtitle_VO" class="row" style="margin-bottom: 75px;">
+            <p> Vincule su usuario a la organización que corresponda para generar <br> cálculos y mediciones más completos </p>
+        </div>
+
+        <div class="row">
+
+            <form method="post" action= "/miembro/vincularOrganizacion">
+
+                <h2 id="selec_org"> Seleccione a qué organización quiere vincularse </h2>
+
+                <script>
+                    let sectores = {};
+                    {{#each organizaciones}}
+                        sectores["{{id}}"] = [];
+                        {{#each sectores}}
+                        sectores["{{../id}}"].push(["{{id}}", "{{nombre}}"]);
+                        {{/each}}
+                    {{/each}}
+                </script>
+
+                <select id="organizaciones" class="form-select vincular-select" name="organizacion" onchange="selectSectores()">
+                    <option selected> Organización </option>
+                    {{#each organizaciones}}
+                    <option value="{{id}}"> {{nombre}} </option>
+                    {{/each}}
+                </select>
+
+                <select id="sectores" class="form-select vincular-select" name="sector">
+                    <option selected> Sector </option>
+                </select>
+
+                <div class="row">
+                    <button type="submit" id="solicitar_vinculacion" class="btn btn-success btn-lg" onclick="alert('Su solicitud de vinculación fue enviada');">
+                        Vincular
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="caja_vacia_VO"></div>
+
+{{/partial}}
+{{> base.hbs}}

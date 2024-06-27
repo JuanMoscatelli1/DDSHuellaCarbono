@@ -1,0 +1,256 @@
+{{> miembros/base-miembro.hbs}}
+
+{{#partial "titulo"}}
+    <title> Registrar trayecto </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/miembros/registrarTrayecto.css">
+    <script src="/js/miembros/opcionesSelect.js"></script>
+    <script src="/js/miembros/registrarTrayecto.js"></script>
+{{/partial}}
+
+{{#partial "direcciones"}}
+    <div class="row">
+        <h4 class="titulo_direccion"> Dirección {{punto}} </h4>
+    </div>
+    <div class="row" style="margin-top: 25px; margin-bottom: 30px;">
+        <input type="text" class="form-control" placeholder="Calle" name="calle_{{punto}}_{{vehiculo}}">
+    </div>
+    <div class="row" style="margin-top: 25px; margin-bottom: 30px;">
+        <input type="text" class="form-control" placeholder="Altura" name="altura_{{punto}}_{{vehiculo}}">
+    </div>
+    <div class="row" style="margin-top: 25px; margin-bottom: 30px;">
+        <select id="localidades" class="form-select" name="localidad_{{punto}}_{{vehiculo}}">
+            <option selected> Localidad </option>
+            {{#each localidades}}
+                <option value="{{id}}"> {{nombre}} </option>
+            {{/each}}
+        </select>
+    </div>
+{{/partial}}
+
+{{#partial "formulario VP"}}
+    <div class="row" style="padding: 1%;">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 25px; margin-bottom: 30px; padding-right: 2.5%;">
+            {{#block "direcciones" punto="origen" vehiculo=vehiculo }}{{/block}}
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 25px; margin-bottom: 30px; padding-left: 2.5%;">
+            {{#block "direcciones" punto="destino"}}{{/block}}
+        </div>
+    </div>
+{{/partial}}
+
+{{#partial "tramo compartido"}}
+    <div class="row" style="padding: 1%; padding-bottom: 20px;">
+        <div class="row" style="margin-bottom: 25px;">
+            <h3 class="titulo_direccion"> ¿Es un tramo compartido? </h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10" style="margin-bottom: 10px;">
+                <div id="container_es_TC" class="div">
+                    <input class="form-check-input" type="radio" name="confirmar_tramo_comp_SC" id="siEsCompartido_SC" value="1">
+                    <label class="form-check-label" for="siEsCompartido_SC"> Sí, y lo realizo con...  </label>
+                    <select class="form-select form-miembros" name="miembro_compartido_{{vehiculo}}">
+                        <option selected> Elija a su compañero de viaje </option>
+                        {{#each miembros}}
+                            <option value="{{id}}">{{nombre}} {{apellido}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 align-items-center justify-content-center" style="display: flex; margin-bottom: 10px;">
+                <input class="form-check-input" type="radio" name="confirmar_tramo_comp_SC" id="noEsCompartido_SC" value="2">
+                <label class="form-check-label" for="noEsCompartido_SC" style="padding-left: 10px;"> No </label>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> REGISTRAR TRAYECTO </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-7 m-lg-auto">
+              <form class="" method="post" action="/miembro/agregarTramo" style="">
+                <div id="reg_Trayecto" class="accordion">
+                    <div class="accordion-item">
+                        <h2 id="header1" class="accordion-header" style="line-height: 30px;">
+                            <button id="btn_desplegar" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#firstStep"
+                                    aria-expanded="true" aria-controls="firstStep" disabled>
+                                ¿Qué transporte utilizará para transladarse?
+                            </button>
+                        </h2>
+
+                        <div id="firstStep" class="accordion-collapse collapse show" aria-labelledby="header1" data-bs-parents="#reg_Trayecto">
+                            <div class="accordion-body justify-content-center" style="display: flex;">
+
+                                {{#each transportes}}
+                                    <div id="radio_transportes" class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="transporte" id="{{this}}" value="{{@index}}" onchange="mostrarFormulario(this.value);">
+                                        <label class="form-check-label" for="{{this}}"> {{this}} </label>
+                                    </div>
+                                {{/each}}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 id="header2" class="accordion-header" style="line-height: 30px;">
+                            <button id="btn_desplegar" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#secondStep"
+                                    aria-expanded="false" aria-controls="secondStep"> Para definir el tramo necesitamos los siguientes campos </button>
+                        </h2>
+
+                        <div id="secondStep" class="accordion-collapse collapse" aria-labelledby="header2" data-bs-parents="#reg_Trayecto">
+                            <div id="rbtn_bici_pie" class="accordion-body rbtn_transportes" style="display: none;">
+                                {{#block "formulario VP" vehiculo="bici"}}{{/block}}
+                            </div>
+
+                            <div id="rbtn_serv_contratado" class="accordion-body rbtn_transportes" style="display: none;">
+                                <div class="row" style="padding: 1%; margin-top: 20px;">
+                                    <h3 class="titulo_direccion"> ¿Qué servicio contratado es? </h3>
+                                    <input id="nomb_serv_contratado" type="text" class="form-control" placeholder="Nombre del servicio" name="servicio_contratado">
+                                </div>
+                                {{#block "formulario VP" vehiculo="servicio"}}{{/block}}
+                                {{#block "tramo compartido" vehiculo="servicio"}}{{/block}}
+                            </div>
+
+                            <div id="rbtn_veh_particular" class="accordion-body rbtn_transportes" style="display: none;">
+                                <div class="row" style="padding: 1%; margin-bottom: 25px; margin-top: 20px;">
+                                    <h3 class="titulo_direccion"> Seleccione el tipo de vehículo y su combustible </h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <select id="tipo_vehiculos" class="form-select" name="tipo_vehiculo">
+                                            <option selected> Tipo de vehículo </option>
+                                            {{#each tipoVehiculo}}
+                                                <option> {{this}} </option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select id="tipo_combustibles" class="form-select" name="tipo_combustible">
+                                            <option selected> Tipo de combustible </option>
+                                            {{#each tipoCombustible}}
+                                                <option> {{this}} </option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                </div>
+                                {{#block "formulario VP" vehiculo="auto"}}{{/block}}
+                                {{#block "tramo compartido" vehiculo="auto"}}{{/block}}
+                            </div>
+
+                            <div id="rbtn_transp_publico" class="accordion-body rbtn_transportes" style="display: none;">
+                                <div class="row" style="padding: 1%; margin-bottom: 25px; margin-top: 20px;">
+                                    <h3 class="titulo_direccion"> Seleccione el tipo de transporte y la línea de viaje </h3>
+                                </div>
+                                <script>
+                                    let transportes = {};
+                                    {{#each tipoTP}} transportes["{{this}}"] = []; {{/each}}
+
+                                    let paradas = {};
+                                    {{#each transportesPublicos}}
+                                        transportes["{{tipoDeTransportePublico}}"].push(["{{id}}", "{{linea}}"]);
+                                        paradas["{{id}}"] = [];
+                                        {{#each this.recorrido}}
+                                            paradas["{{../id}}"].push(["{{id}}", "{{nombre}}"]);
+                                        {{/each}}
+                                    {{/each}}
+                                </script>
+                                <div class="row">
+                                    <div class="col">
+                                        <select id="tipo_transp_publico" class="form-select" onchange="selectTransportePublico()">
+                                            <option selected> Tipo de transporte público </option>
+                                            {{#each tipoTP}}
+                                                <option> {{this}} </option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select id="transp_publico_lineas" class="form-select" onchange="selectParada()" name="transporte_publico">
+                                            <option selected> Línea de viaje </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 25px; margin-bottom: 15px; padding-right: 2.5%;">
+
+                                        <div class="row">
+                                            <h4 class="titulo_direccion"> Parada inicio </h4>
+                                        </div>
+
+                                        <div class="row" style="margin-top: 25px; margin-bottom: 30px;">
+                                            <select class="form-select form-paradas" name="parada_origen">
+                                                <option selected> Desde... </option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 25px; margin-bottom: 15px; padding-left: 2.5%;">
+
+                                        <div class="row">
+                                            <h4 class="titulo_direccion"> Parada destino </h4>
+                                        </div>
+
+                                        <div class="row" style="margin-top: 25px; margin-bottom: 30px;">
+                                            <select class="form-select form-paradas" name="parada_destino">
+                                                <option selected> Hasta... </option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="contener_botones">
+                    <button type="submit" id="last_buttons" class="btn btn-success btn-lg" onclick="alert('Se Agrego el Tramo');">
+                        Agregar tramo
+                    </button>
+                    <button type="reset" id="last_buttons" class="btn btn-secondary btn-lg">
+                        Limpiar campos
+                    </button>
+                </div>
+
+              </form>
+
+            </div>
+
+        </div>
+
+        <form method="post" action="/miembro/agregarTrayecto">
+            <div class="col-sm-12 col-md-12 col-lg-8 col-xl-7 m-lg-auto">
+                <div style="display: flex; margin-top: 45px;">
+                    <button type="submit" id="last_buttons" class="btn btn-success btn-lg align-items-center" onclick="alert('Se Agrego el Trayecto correctamente');">
+                        Crear trayecto
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div id="caja_vacia_RT"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

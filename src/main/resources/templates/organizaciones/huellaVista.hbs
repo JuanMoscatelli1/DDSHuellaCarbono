@@ -1,0 +1,76 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "tabla"}}
+    <div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <h1 class="sb_title"> Actividades </h1>
+    </div>
+
+        <br><br>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="display: flex; align-items: center; justify-content: center;">
+            <table id="table_header_OD" class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col"> Nombre </th>
+                    <th scope="col"> Consumo </th>
+                    <th scope="col"> Periodicidad </th>
+                    <th scope="col"> Periodo de imputacion </th>
+                    <th scope="col"> Valor HC </th>
+                </tr>
+                </thead>
+
+                <tbody id="table_body_OD">
+                {{#each actividades}}
+                    <tr class="align-middle">
+                        <td> {{this.nombre}} </td>
+                        <td> {{this.consumo}} </td>
+                        <td> {{this.periodicidad}} </td>
+                        <td> {{this.perDeImputacion}} </td>
+                        <td> {{this.huellaDeCarbono}} </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 50px;">
+        <h1 class="sb_title"> Trayectos </h1>
+    </div>
+
+        <br><br>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="display: flex; align-items: center; justify-content: center;">
+            <table id="table_header_OD" class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col"> Fecha </th>
+                    <th scope="col"> Miembro </th>
+                    <th scope="col"> Distancia </th>
+                    <th scope="col"> Huella de carbono </th>
+                </tr>
+                </thead>
+
+                <tbody id="table_body_OD">
+                {{#each trayectos}}
+                    <tr class="align-middle">
+                        <td> {{fecha}} </td>
+                        <td> {{miembros}} </td>
+                        <td> {{distancia}} </td>
+                        <td> {{huellaOrgMod}} </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+<p><h3><br><br> Huella Total: {{huella}} kgCO2eq </h3></p>
+
+{{/partial}}
+
+{{>visualizarHuella.hbs}}

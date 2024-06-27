@@ -1,0 +1,56 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Agregar contacto </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/agregarContacto.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> AGREGAR CONTACTO </h1>
+        </div>
+    </div>
+
+    <div id="form_container_AC" class="dropdown-menu col-sm-10 col-md-7 col-lg-8 col-xl-6 align-items-center">
+
+        <form class="px-4 py-3">
+
+            <div class="row">
+                <div class="mb-3 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <label id="label_form_AC" for="nombre_contacto" class="form-label"> Nombre </label>
+                    <input type="text" class="form-control form-control-lg" id="nombre_contacto">
+                </div>
+
+                <div class="mb-3 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <label id="label_form_AC" for="apellido_contacto" class="form-label"> Apellido </label>
+                    <input type="password" class="form-control form-control-lg" id="apellido_contacto">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 20px;">
+                    <label id="label_form_AC" for="mail_contacto" class="form-label"> Mail </label>
+                    <input type="text" class="form-control form-control-lg" id="mail_contacto">
+                </div>
+
+                <div class="mb-3 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-top: 20px;">
+                    <label id="label_form_AC" for="telefono_contacto" class="form-label"> Teléfono </label>
+                    <input type="password" class="form-control form-control-lg" id="telefono_contacto">
+                </div> <!-- AGREGAR EL +54 9 AL TELEFONO EN LA CONSULTA, NO POR DATO CAMPO -->
+            </div>
+
+            <button id="btn_agregar" type="submit" class="btn btn-primary btn-success"> AGREGAR </button>
+
+        </form>
+
+    </div>
+
+    <div id="caja_vacia_ACont"></div>
+
+{{/partial}}
+{{> base.hbs}}

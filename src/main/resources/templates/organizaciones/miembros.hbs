@@ -1,0 +1,71 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Miembros </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/tabla.css">
+{{/partial}}
+
+{{#partial "container"}}
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> MIEMBROS </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <p id="description" style="text-align: center;">
+                LISTA DE MIEMBROS REGISTRADOS EN SU ORGANIZACIÓN HASTA LA FECHA
+            </p>
+        </div>
+
+        <div class="row">
+
+            <table id="table_header" class="table table-hover table-bordered">
+
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> Sector </th>
+                        <th scope="col"> Nombre y apellido </th>
+                        <th scope="col"> Tipo Documento </th>
+                        <th scope="col"> Documento </th>
+                        <th scope="col"> Dirección </th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body">
+
+                {{#each sectores}}
+                {{#each miembros}}
+                    <tr class="align-middle">
+                        <td> {{../nombre}} </td>
+                        <td> {{nombre}} {{apellido}} </td>
+                        <td> {{tipoDocumento}} </td>
+                        <td> {{numeroDocumento}} </td>
+                        <td> {{direccion.direccion}} </td>
+                        <td class="text-center">
+                            <a id="link_perfil_MO" class="nav-link" href="#">
+                                <i class='bx bx-user-circle' title="Ver perfil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {{/each}}
+                {{/each}}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="caja_vacia_MOrg"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,23 @@
+#texto_RM {
+    text-align: justify;
+    font-size: 20px;
+}
+
+#button_container_RM {
+    display: grid;
+    align-items: center;
+}
+
+.botones_RM {
+    position: relative;
+    width: 75%;
+    height: 80px;
+    font-size: 22px;
+    border-radius: 50px;
+    margin: 15px auto;
+}
+
+#caja_vacia_RM {
+    width: 100%;
+    height: 100px;
+}

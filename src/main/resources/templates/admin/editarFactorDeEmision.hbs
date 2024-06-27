@@ -1,0 +1,58 @@
+{{> admin/base-admin.hbs}}
+
+{{#partial "titulo"}}
+    <title> Editar Factor de Emisión </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/admin/editarFactorDeEmision.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> EDITAR FACTOR DE EMISIÓN </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row g-3">
+            <div class="col-sm-8 col-md-5 col-lg-5 col-xl-5">
+                <label> Descripción </label>
+                <input type="text" class="form-control form-control-lg" placeholder="-completar-aca-" disabled>
+            </div>
+            <div class="col-sm-4 col-md-2 col-lg-2 col-xl-2">
+                <label> Unidad </label>
+                <input type="text" class="form-control form-control-lg" placeholder="-completar-aca-" disabled>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                <label> Tipo de Consumo </label>
+                <input type="text" class="form-control form-control-lg" placeholder="-completar-aca-" disabled>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col" style="margin-top: 30px;">
+                <label> Valor Actual </label>
+                <input type="text" class="form-control form-control-lg" placeholder="-completar-aca-" disabled>
+            </div>
+            <div class="col" style="margin-top: 30px;">
+                <label> Valor Nuevo </label>
+                <input type="text" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="sub_row_button">
+                <button id="aceptar_edit_FE" type="button" class="btn btn-success btn-lg"> Aceptar </button>
+            </div>
+        </div>
+
+        <div id="caja_vacia_EFE"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

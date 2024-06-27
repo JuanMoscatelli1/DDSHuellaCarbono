@@ -1,0 +1,75 @@
+{{> admin/base-admin.hbs}}
+
+{{#partial "titulo"}}
+    <title> Organizaciones </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/admin/organizaciones.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> ORGANIZACIONES </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <p id="texto1_O" style="text-align: center;">
+                LISTADO DE ORGANIZACIONES QUE HA REGISTRADO HASTA LA FECHA
+            </p>
+        </div>
+
+        <div class="row">
+
+            <table id="table_header_O" class="table table-hover table-bordered">
+
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> Razón social </th>
+                        <th scope="col"> Tipo de organización </th>
+                        <th scope="col"> Dirección </th>
+                        <th scope="col"> Clasificación </th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body_O">
+                    <tr class="align-middle">
+                        <td> DBLandIT </td>
+                        <td> Empresa </td>
+                        <td> Centro </td>
+                        <td> Empresa del sector tecnológico </td>
+                        <td class="text-center">
+                            <a id="link_perfil_O" class="nav-link" href="#">
+                                <i class='bx bxs-detail' title="Ver detalle"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr class="align-middle">
+                        <td> UTN Campus </td>
+                        <td> Institución </td>
+                        <td> Mozart </td>
+                        <td> Universidad </td>
+                        <td class="text-center">
+                            <a id="link_perfil_O" class="nav-link" href="#">
+                                <i class='bx bxs-detail' title="Ver detalle"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="caja_vacia_O"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,119 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Registro de mediciones </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/registroDeMediciones.css">
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> REGISTRO DE MEDICIONES </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-bottom: 25px;">
+                <p id="texto_RM" style="font-size:26px;">
+                    Para el registro de mediciones, se deberá subir un archivo .xlsx con la última versión de excel. Para visualizar las mediciones cliquear en "Ver listado de mediciones cargadas"
+                    <br><br>
+                    El paso a paso para la subida de mediciones es el siguiente:
+                </p>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-1 col-xl-1"></div>
+
+            <div id="button_container_RM" class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                <button type="button" class="btn btn-success btn-lg botones_RM" onclick="location.href='/organizacion/registrarMediciones'">
+                    Registrar nueva medición
+                </button>
+                <button type="button" class="btn btn-success btn-lg botones_RM" onclick="location.href='/organizacion/vistaMediciones'">
+                    Ver listado de mediciones cargadas
+                </button>
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <p id="texto_RM" style="font-size:26px;">
+                    <b> Paso 1: </b> Hacer click en el botón "Registrar nueva medición". Se mostrará una pantalla para cargar el archivo excel
+                    al sistema.
+                    <br>
+                    <br>
+                    <b> Paso 2: </b> Adjuntar el archivo excel con el formato ya informado anteriormente, haciendo click en "Examinar" para buscar
+                    en el explorador al archivo.
+                    <br>
+                    <br>
+                    <b> Paso 3: </b> Cliquear en "Aceptar" si el archivo es correcto, o volver a examinar para cambiar el archivo. Cancelar para volver
+                    a la pantalla anterior
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-bottom: 50px;">
+            <h2 style="font-size: 25px;"> Imágenes ilustrativas para orientar </h2>
+        </div>
+
+        <div id="carrousel_reg_mediciones" class="carousel slide" data-bs-ride="true">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                     <img src="/img/crearUsuario.png" class="d-block w-100" width="200" height="600">
+                    <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="200" height="600"
+                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice"
+                         focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em"> First slide </text></svg> -->
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/img/index-huellaDeCarbono.jpg" class="d-block w-100" width="200" height="600">
+                   <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="200" height="600"
+                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice"
+                         focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em"> Second slide </text></svg> -->
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/img/crearUsuario.png" class="d-block w-100" width="200" height="600">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/img/index-huellaDeCarbono.jpg" class="d-block w-100" width="200" height="600">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"> Anterior </span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carrousel_reg_mediciones" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"> Siguiente </span>
+            </button>
+        </div>
+
+        <div id="caja_vacia_RM"></div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

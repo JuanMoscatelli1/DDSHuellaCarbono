@@ -1,0 +1,30 @@
+#title_CU {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+#form_crear_usuario label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#registrar_usuario {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    width: 260px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 25px;
+}
+
+#crear_usuario_img {
+    padding-left: 35px;
+    background-size: 100%;
+}
+
+#crear_usuario_img img {
+    width: 500px;
+    height: 450px;
+    padding-top: 35px;
+}

@@ -1,0 +1,61 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Mediciones cargadas </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/tabla.css">
+{{/partial}}
+
+{{#partial "container"}}
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> MEDICIONES DE ACTIVIDADES </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <p id="description">
+                Lista de mediciones registradas en su organización hasta la fecha.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <table id="table_header" class="table table-hover table-bordered">
+
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col"> Actividad </th>
+                        <th scope="col"> Consumo </th>
+                        <th scope="col"> Periodicidad </th>
+                        <th scope="col"> Periodo de imputación </th>
+                        <th scope="col"> Huella de carbono </th>
+                    </tr>
+                </thead>
+
+                <tbody id="table_body">
+
+                {{#each actividades}}
+                    <tr class="align-middle">
+                        <td> {{nombre}} </td>
+                        <td> {{consumo}} </td>
+                        <td> {{periodicidad}} </td>
+                        <td> {{perDeImputacion}} </td>
+                        <td> {{huellaDeCarbono}} </td>
+                    </tr>
+                {{/each}}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

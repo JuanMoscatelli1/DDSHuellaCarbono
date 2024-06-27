@@ -1,0 +1,54 @@
+{{> miembros/base-miembro.hbs}}
+
+{{#partial "titulo"}}
+    <title> Registrar trayecto </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/miembros/vincularOrganizacion.css">
+    <script src="/js/miembros/opcionesSelect.js"></script>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> REGISTRAR TRAYECTO </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="subtitle_VO" class="row" style="margin-bottom: 75px;">
+            <p> Elija la organización a la que pertenece el <br> trayecto que desea cargar </p>
+        </div>
+
+        <div class="row">
+
+            <form method="post" action= "/miembro/registrarTramo">
+
+                <h2 id="selec_org"> Seleccione a qué organización pertenece el trayecto </h2>
+
+                <select class="form-select vincular-select" name="organizacion">
+                    <option selected> Organización </option>
+                    {{#each organizaciones}}
+                    <option value="{{id}}"> {{nombre}} </option>
+                    {{/each}}
+                </select>
+
+                <div class="row">
+                    <button type="submit" id="solicitar_vinculacion" class="btn btn-success btn-lg" >
+                        Registrar
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="caja_vacia_VO"></div>
+
+{{/partial}}
+{{> base.hbs}}

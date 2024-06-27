@@ -1,0 +1,27 @@
+#form_container_AC {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#label_form_AC {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+#btn_agregar {
+    font-size: 28px;
+    line-height: 30px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    margin-right: 25%;
+    margin-left: 25%;
+    border-radius: 25px;
+    height: 50px;
+    width: 50%;
+}
+
+#caja_vacia_ACont {
+    width: 100%;
+    height: 100px;
+}

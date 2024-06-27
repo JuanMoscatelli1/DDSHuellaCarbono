@@ -1,0 +1,60 @@
+#main_text h1 {
+    font-size: 55px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+#main_text p {
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+#main_button {
+    border-radius: 50px;
+    font-size: 20px;
+    height: 60px;
+    width: 300px;
+}
+
+#main_img {
+    width: 100%;
+    height: 90%;
+    margin-top: 100px;
+}
+
+#caja_vacia {
+    width: 100%;
+    height: 150px;
+}
+
+#index_RRMT {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#funcionalidades {
+    font-size: 24px;
+    text-align: center;
+}
+
+#funcionalidades:hover {
+    background-color: #009C05;
+    color: white;
+}
+
+.card-body h3 {
+    padding: 10px;
+    font-size: 26px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.card-body p {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}

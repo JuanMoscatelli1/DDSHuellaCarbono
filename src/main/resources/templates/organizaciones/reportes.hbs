@@ -1,0 +1,46 @@
+{{> organizaciones/base-org.hbs}}
+
+{{#partial "titulo"}}
+    <title> Ver reportes </title>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div class="row">
+        <div id="title_IS" class="align-items-center">
+            <h1> Ingresar mes y año </h1>
+        </div>
+    </div>
+
+    <div id="form_container_IS" class="dropdown-menu col-sm-9 col-md-7 col-lg-5 col-xl-4 align-items-center">
+
+        <form class="px-4 py-3" method="POST" action="/organizacion/visualizarReportes">
+
+            <div class="mb-3">
+                <label id="label_form_IS" for="usuario_inicio_sesion" class="form-label"> Mes </label>
+                <input type="text" name="mes" class="form-control form-control-lg" id="usuario_inicio_sesion">
+            </div>
+
+            <div class="mb-3">
+                <label id="label_form_IS" for="contrasenia_inicio_sesion" class="form-label"> Año </label>
+                <input type="text" name="anio" class="form-control form-control-lg" id="contrasenia_inicio_sesion">
+            </div>
+            <div>
+                <select id="tipo_vehiculos" class="form-select" name="tipo_reporte">
+                    <option selected> Tipo de reporte </option>
+                    <option> Composición por Actividad  </option>
+                    <option> Evolución mensual  </option>
+                    <option> Evolución anual  </option>
+                </select>
+             </div>
+            <button id="btn_iniciar_sesion" type="submit" class="btn btn-primary btn-success"> Aceptar </button>
+
+        </form>
+
+
+    </div>
+
+    <div id="caja_vacia_IS"></div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,30 @@
+
+{{#partial "titulo"}}
+    <title> Huella </title>
+{{/partial}}
+
+{{#partial "estilos"}}
+    <link rel="stylesheet" href="/css/organizaciones/tabla.css">
+{{/partial}}
+
+{{#partial "container"}}
+    <div id="title_row" class="row">
+        <div id="titulo" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1> Huella de Carbono </h1>
+        </div>
+    </div>
+
+    <div class="container">
+
+
+        <div class="row">
+
+           {{#block "tabla"}}
+           {{/block}}
+
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

@@ -1,0 +1,30 @@
+{{#partial "titulo"}}
+    <title> Prohibido </title>
+{{/partial}}
+
+{{#partial "container"}}
+
+    <div class="container">
+
+        <div class="row">
+            <div id="icon_prohibido">
+                <i class='bx bxs-error-alt'></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="titulo_prohibido">
+                <h1> NO TIENES ACCESO A ESTE SITIO </h1>
+            </div>
+        </div>
+
+        <div id="subfila3_container">
+             <button type="button" class="btn btn-success btn-lg" style="margin-left:auto; margin-right:auto;" onclick="location.href='/miembro/perfil'">
+                 Volver Para Atras
+             </button>
+        </div>
+
+    </div>
+
+{{/partial}}
+{{> base.hbs}}

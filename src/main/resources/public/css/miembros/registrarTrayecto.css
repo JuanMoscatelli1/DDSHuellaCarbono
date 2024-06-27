@@ -1,0 +1,112 @@
+#btn_desplegar {
+    font-size: 20px;
+    padding-left: 24%;
+    padding-right: 24%;
+    text-align: center;
+}
+
+#radio_transportes {
+    font-size: 17px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.titulo_direccion {
+    text-align: center;
+    font-size: 22px;
+}
+
+.rbtn_transportes input {
+    font-size: 16px;
+}
+
+.rbtn_transportes select {
+    font-size: 16px;
+}
+
+.rbtn_transportes label {
+    font-size: 18px;
+}
+
+#nomb_serv_contratado {
+    width: 60%;
+    margin: 25px auto 5px;
+}
+
+#container_es_TC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_es_TC label {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+#miembros_de_mi_org {
+    width: 45%;
+}
+
+#contener_botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#last_buttons {
+    font-size: 22px;
+    text-align: center;
+    width: 210px;
+    height: auto;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mi_trayecto {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 35px;
+}
+
+.mis_tramos input {
+    font-size: 16px;
+}
+
+#btn_desplegar2 {
+    font-size: 20px;
+}
+
+.mostrar_leyenda_siNoTramoComp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mostrar_leyenda_siNoTramoComp h4 {
+    font-size: 17px;
+    margin: 0;
+}
+
+.mostrar_leyenda_siNoTramoComp input {
+    width: 40%;
+    margin-left: 20px;
+}
+
+.borrar_tramo {
+    margin-bottom: 25px;
+}
+
+#mis_organizaciones {
+    width: 50%;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+#caja_vacia_RT {
+    width: 100%;
+    height: 200px;
+}
